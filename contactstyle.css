@@ -1,0 +1,51 @@
+.background {
+background-color: white;
+color: black;
+}
+
+.home {
+    margin-top: 0,0px;
+    margin: left;
+    display: flex;
+}
+
+ .navbar {
+      background-color: #333;
+      overflow: hidden;
+      padding: 10px 20px;
+    }
+
+    .navbar a {
+      color: rgb(202, 4, 4);
+      text-decoration: none;
+      margin-right: 20px;
+      letter-spacing: 4px;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+.site-footer {
+  background-color: #f0f0f0;  /* light gray background */
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  color: #555;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+}
+
+.intro {
+    margin: left;
+    margin-top: 0,0px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(163, 3, 3);
+}
+
+.wrapper {
+  display: flex;
+  align-items: flex-start; /* vertically aligns items at the top */
+  gap: 10px;
+}

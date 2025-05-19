@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+<!--Links styles.css to html-->
+<link rel = "stylesheet" href = "contactstyle.css">
+</head>
+<div class="home">
+    <a href="index.html"><img src="Images/groom_off_log.avif" width="250" height="250"></a>
+    <img src="Images/long_log_grext.png">
+</div>
+
+<div class="navbar">
+    <a href="gallery.html">GALLERY</a>
+    <a href="about.html">ABOUT</a>
+    <a href="services.html">SERVICES</a>
+    <b><a href="">CONTACT</a></b>
+    <a href="socials.html">SOCIALS</a>
+  </div>
+
+<body>
+  <h1>Email GROOMS EXTERIORS Now</h1>
+
+  <form id="contact-form">
+    <label for="name">Your Name:</label><br/>
+    <input type="text" id="name" name="name" required/><br/><br/>
+
+    <label for="email">Your Email:</label><br/>
+    <input type="email" id="email" name="email" required/><br/><br/>
+
+    <label for="message">Your Message:</label><br/>
+    <textarea id="message" name="message" rows="5" cols="40" required></textarea><br/><br/>
+
+    <button type="submit">Send Email</button>
+  </form>
+
+  <p id="status"></p>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value
+      };
+
+      const status = document.getElementById('status');
+
+      try {
+        const response = await fetch("https://formspree.io/f/xdkgyjke", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          status.textContent = "Thanks! Your message has been sent.";
+          form.reset();
+        } else {
+          status.textContent = "Oops! There was a problem submitting your form.";
+        }
+      } catch (error) {
+        status.textContent = "Network error. Please try again later.";
+      }
+    });
+  </script>
+</body>
+
+<p>Phone Number: (812) 897-4439</p>
+
+<footer class="site-footer">
+  <p>&copy; 2025 Grooms Exteriors. Website created by FVR Studios. All rights reserved.</p>
+</footer>
+</html>
